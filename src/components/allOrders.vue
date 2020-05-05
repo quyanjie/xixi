@@ -11,7 +11,6 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
             <th>商品编号</th>
             <th>商品名称</th>
             <th>商品图片</th>
@@ -24,7 +23,7 @@
         </thead>
         <tbody v-for="item in list" :key="item.id">
           <tr>
-            <td>{{item.cid}}</td>
+            <!-- <td>{{item.cid}}</td> -->
             <td>{{item.orderNo}}</td>
             <td>{{getOneGoodsFromList(item.cid).commodityName}}</td>
             <td>

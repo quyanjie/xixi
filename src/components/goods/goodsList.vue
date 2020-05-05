@@ -2,13 +2,15 @@
   <!-- 内容 -->
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h2 class="sub-header">商品列表</h2>
-    <router-link to="/add" class="btn btn-success">Add</router-link>
+      <!-- to 后面要加 路由里的path(路径) -->
+    <router-link to="/goods/addGoods" class="btn btn-success">Add</router-link>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>#</th>
             <th>商品编号</th>
+            <th>商品名称</th>
             <th>购买时间</th>
             <th>商品图片</th>
             <th>商品价格（元）</th>
@@ -18,6 +20,7 @@
           <tr>
             <td>{{item.id}}</td>
             <td>{{item.skuNo}}</td>
+            <td>{{item.commodityName}}</td>
             <td>{{item.createTime}}</td>
             <td>
               <img :src="item.imgs" class="img" />

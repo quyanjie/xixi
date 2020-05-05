@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import list from '../components/list.vue'
 import foo from '../components/foo.vue'
 import boo from '../components/boo.vue'
-import add from '../components/listProcess/add.vue'
+import addGoods from '../components/goods/addGoods.vue'
 import edit from '../components/listProcess/edit.vue'
 import order from '../components/order/order.vue'
 import paymentDetails from '../components/order/PaymentDetails.vue'
@@ -28,7 +28,7 @@ var routes = [
     name: 'boo', path: '/boo', component: boo
   },
   {
-    name: 'add', path: '/add', component: add
+    name: 'addGoods', path: '/goods/addGoods', component: addGoods
   },
   {
     name: 'edit', path: '/edit/:id', component: edit

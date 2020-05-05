@@ -13,11 +13,13 @@
       </div>
       <div class="fontdiv2">
         <label>购买数量:</label>
-        <input type="number" v-model="num" />
+        <!-- <input type="number" v-model="num" v-on:input="myFunction()" /> -->
+        <input type="number" v-model="num" v-on:input="myFunction2()" />
       </div>
       <div class="fontdiv2">
         <label>合计:</label>
-        <label>￥{{num * goods.price /100 }}(元)</label>
+        <!-- <label>￥{{num * goods.price * discount/100}}(元)</label> -->
+        <label>￥{{totalPrice}}(元)</label>
       </div>
       <button type="submit" class="btn btn-success" @click.prevent="submitOrder">提交订单</button>
     </form>
@@ -32,10 +34,27 @@ export default {
     return {
       goods: {},
       num: 1,
-      submitOrderObj: {}
+      submitOrderObj: {},
+      // 折扣默认为1,就是不打折，数量等于或者超过三件的时候，开始打折，操作此变量的值为0.8
+      discount: 1,
+      // 默认订单总金额为一件商品的单价，但是不能在此计算，需要在mounted里计算，数据加载顺序不同的原因，
+      totalPrice: 0
     };
   },
   methods: {
+    myFunction() {
+      if (this.num >= 3) {
+        this.discount = 0.8;
+      }
+    },
+    myFunction2() {
+      // 默认不打折
+      this.totalPrice = (this.num * this.goods.price) / 100;
+      // 数量大于等于三的时候，开始打折
+      if (this.num >= 3) {
+        this.totalPrice = ((this.num * this.goods.price) / 100) * 0.8;
+      }
+    },
     submitOrder() {
       this.submitOrderObj.payMoneyTotal = this.num * this.goods.price;
       this.submitOrderObj.cid = this.goods.id;
@@ -51,7 +70,10 @@ export default {
           // this.$router.push({ path: "./order/PaymentDetails" });
           console.log("submitOrder");
           console.log("data:", data);
-          this.$router.push({ name: 'paymentDetails', params: { goodsPay: this.goods,num: this.num }});
+          this.$router.push({
+            name: "paymentDetails",
+            params: { goodsPay: this.goods, num: this.num }
+          });
         }
       });
     }
@@ -59,6 +81,9 @@ export default {
   mounted() {
     this.goods = this.$route.params.itemAbc;
     console.log("this.goods", this.goods);
+    // 这里容易忽略的地方，初始计算的地方，当页面加载完成的时候，不写在这里，totalprice就是0，
+    // 因为this.goods = this.$route.params.itemAbc;还没有加载到这里，上面代码无法实现。
+    this.totalPrice = (this.num * this.goods.price) / 100;
   }
 };
 </script>
