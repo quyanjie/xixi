@@ -13,13 +13,13 @@
       </div>
       <div class="fontdiv2">
         <label>购买数量:</label>
-        <!-- <input type="number" v-model="num" v-on:input="myFunction()" /> -->
-        <input type="number" v-model="num" v-on:input="myFunction2()" />
+        <input type="number" v-model="num" v-on:input="myFunction()" />
+        <!-- <input type="number" v-model="num" v-on:input="myFunction2()" /> -->
       </div>
       <div class="fontdiv2">
         <label>合计:</label>
-        <!-- <label>￥{{num * goods.price * discount/100}}(元)</label> -->
-        <label>￥{{totalPrice}}(元)</label>
+        <label>￥{{num * goods.price * discount/100}}(元)</label>
+        <!-- <label>￥{{totalPrice}}(元)</label> -->
       </div>
       <button type="submit" class="btn btn-success" @click.prevent="submitOrder">提交订单</button>
     </form>
@@ -43,22 +43,25 @@ export default {
   },
   methods: {
     myFunction() {
-      if (this.num >= 3) {
+      if (this.num >= 3 && this.num < 5) {
         this.discount = 0.8;
+      } else if (this.num >= 5) {
+        this.discount = 0.5;
       }
     },
-    myFunction2() {
-      // 默认不打折
-      this.totalPrice = (this.num * this.goods.price) / 100;
-      // 数量大于等于三的时候，开始打折
-      if (this.num >= 3) {
-        this.totalPrice = ((this.num * this.goods.price) / 100) * 0.8;
-      }
-    },
+    // myFunction2() {
+    //   // 默认不打折
+    //   this.totalPrice = (this.num * this.goods.price) / 100;
+    //   // 数量大于等于三的时候，开始打折
+    //   if (this.num >= 3) {
+    //     this.totalPrice = ((this.num * this.goods.price) / 100) * 0.8;
+    //   }
+    // },
     submitOrder() {
-      this.submitOrderObj.payMoneyTotal = this.num * this.goods.price;
+      this.submitOrderObj.payMoneyTotal =
+        this.num * this.goods.price * this.discount;
       this.submitOrderObj.cid = this.goods.id;
-      this.submitOrderObj.price = this.num * this.goods.price;
+      this.submitOrderObj.price = this.num * this.goods.price * this.discount;
       this.submitOrderObj.address = "上海昌平龙锦苑东四区";
       this.submitOrderObj.uid = 2;
       this.submitOrderObj.num = this.num;
@@ -72,7 +75,7 @@ export default {
           console.log("data:", data);
           this.$router.push({
             name: "paymentDetails",
-            params: { goodsPay: this.goods, num: this.num }
+            params: { goodsPay: this.goods, num: this.num ,discount:this.discount}
           });
         }
       });

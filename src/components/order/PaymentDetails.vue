@@ -3,7 +3,7 @@
     <h2 class="sub-header">订单详情</h2>
     <form>
       <div class="fontdiv2">
-        <label>￥{{num * goods.price /100 }}(元)</label>
+        <label>￥{{num * goods.price * discount/100 }}(元)</label>
       </div>
       <button type="submit" class="btn btn-success" @click.prevent="payment">立即付款</button>
     </form>
@@ -18,7 +18,8 @@ export default {
     return {
       goods: {},
       num: 1,
-      submitOrderObj: {}
+      submitOrderObj: {},
+      discount:1
     };
   },
   methods: {
@@ -28,6 +29,7 @@ export default {
     }
   },
   mounted() {
+    this.discount = this.$route.params.discount
     this.goods = this.$route.params.goodsPay;
     this.num = this.$route.params.num;
     console.log("this.goods", this.goods);
