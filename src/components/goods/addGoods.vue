@@ -153,10 +153,10 @@ export default {
         if (data.status === 200) {
           if (data.data.code == "2000") {
             alert("添加成功");
+            this.$router.push("./goods/goodsList");
           } else {
             alert(data.data.message);
           }
-          this.$router.push("./goods/goodsList");
         }
       });
     }

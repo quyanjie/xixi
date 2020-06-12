@@ -10,7 +10,8 @@ import order from '../components/order/order.vue'
 import paymentDetails from '../components/order/PaymentDetails.vue'
 import allOrders from '../components/allOrders.vue'
 import sports from '../components/sports/sports.vue'
-import sportsEcharts from '../components/sportsEcharts.vue'
+import sportsV2 from '../components/sports/sportsV2.vue'
+import sportsEcharts from '../components/sports/sportsEcharts.vue'
 import goodsList from '../components/goods/goodsList.vue'
 
 
@@ -40,7 +41,10 @@ var routes = [
     name: 'sports', path: '/sports/sports', component: sports
   },
   {
-    name: 'sportsEcharts', path: '/sportsEcharts', component: sportsEcharts
+    name: 'sportsV2', path: '/sports/sportsV2', component: sportsV2
+  },
+  {
+    name: 'sportsEcharts', path: '/sports/sportsEcharts', component: sportsEcharts
   },
   {
     name: 'goodsList', path: '/goods/goodsList', component: goodsList

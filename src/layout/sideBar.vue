@@ -18,8 +18,12 @@
         <a>运动步数-表格</a>
       </router-link>
 
-      <router-link active-class="active" tag="li" to="/sportsEcharts">
+      <router-link active-class="active" tag="li" to="/sports/sportsEcharts">
         <a>运动步数-图表</a>
+      </router-link>
+
+      <router-link active-class="active" tag="li" to="/sports/sportsV2">
+        <a>运动步数V2</a>
       </router-link>
 
       <router-link active-class="active" tag="li" to="/goods/goodsList">
