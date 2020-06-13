@@ -23,7 +23,15 @@
       </router-link>
 
       <router-link active-class="active" tag="li" to="/sports/sportsV2">
-        <a>运动步数V2</a>
+        <a>运动步数-柱状图V2</a>
+      </router-link>
+
+      <router-link active-class="active" tag="li" to="/sports/charts/CalendarPoint">
+        <a>运动步数-日历散点图</a>
+      </router-link>
+
+      <router-link active-class="active" tag="li" to="/sports/charts/effectScatterBmap">
+        <a>effectScatterBmap</a>
       </router-link>
 
       <router-link active-class="active" tag="li" to="/goods/goodsList">
