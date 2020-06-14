@@ -102,12 +102,9 @@
       this.getAllList();
       // console.log('users', this.users)
     }
-  },
-  mounted() {
-    // this.draw();
-    this.getAllList();
   }
-};
+  
+
 </script>
 
 <style>

@@ -26,6 +26,10 @@
         <a>运动步数-柱状图V2</a>
       </router-link>
 
+      <router-link active-class="active" tag="li" to="/sports/sportsV3">
+        <a>运动步数-柱状图V3</a>
+      </router-link>
+
       <router-link active-class="active" tag="li" to="/sports/charts/CalendarPoint">
         <a>运动步数-日历散点图</a>
       </router-link>

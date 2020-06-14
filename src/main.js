@@ -3,11 +3,15 @@ import App from './App.vue'
 import router from './router/index.js'
 import axios from "axios"
 import echarts from 'echarts'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 // axios.defaults.baseURL = 'http://localhost:3003'
 axios.defaults.baseURL = 'http://wandour.top/mouse'
 // axios.defaults.baseURL = 'http://192.168.0.108:8086'
 // axios.defaults.baseURL = 'http://127.0.0.1:8086'
+
+Vue.use(ElementUI);
 
 Vue.prototype.$http = axios
 Vue.prototype.$echarts = echarts

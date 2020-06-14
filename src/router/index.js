@@ -11,6 +11,7 @@ import paymentDetails from '../components/order/PaymentDetails.vue'
 import allOrders from '../components/allOrders.vue'
 import sports from '../components/sports/sports.vue'
 import sportsV2 from '../components/sports/sportsV2.vue'
+import sportsV3 from '../components/sports/sportsV3.vue'
 import sportsEcharts from '../components/sports/sportsEcharts.vue'
 import sportsCalendarCharts from '../components/sports/charts/CalendarPoint'
 import effectScatterBmap from '../components/sports/charts/effectScatterBmap'
@@ -44,6 +45,9 @@ var routes = [
   },
   {
     name: 'sportsV2', path: '/sports/sportsV2', component: sportsV2
+  },
+  {
+    name: 'sportsV3', path: '/sports/sportsV3', component: sportsV3
   },
   {
     name: 'sportsEcharts', path: '/sports/sportsEcharts', component: sportsEcharts
