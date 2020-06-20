@@ -24,7 +24,7 @@
             <td>{{item.reachAmount}}</td>
             <td>
               <router-link :to="'/edit/'+item.id">修改</router-link>
-              <a href="#" @click="del(item.id)">删除</a>
+              <a href="#" @click="del(item.id)">删除11111</a>
             </td>
           </tr>
         </tbody>
