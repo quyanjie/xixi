@@ -23,7 +23,7 @@
         myChart: null,
         users: [
           {id: 1, nick: '李明'},
-          {id: 2, nick: 'YJ宝贝'},
+          {id: 2, nick: 'YJ宝贝哈哈哈'},
           {id: 23, nick: '知足是福'},
           {id: 25, nick: '阿冷'},
           {id: 26, nick: '阿管'},
