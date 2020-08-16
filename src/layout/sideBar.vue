@@ -99,8 +99,13 @@ export default {
           children: [
             {
               id: 209,
-              path: "button",
+              path: "work/button",
               authName: "按钮切换"
+            },
+            {
+              id: 210,
+              path: "work/upload",
+              authName: "上传文件"
             }
           ]
         }

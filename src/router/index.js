@@ -17,6 +17,7 @@ import sportsCalendarCharts from '../components/sports/charts/CalendarPoint'
 import effectScatterBmap from '../components/sports/charts/effectScatterBmap'
 import goodsList from '../components/goods/goodsList.vue'
 import button from '../components/work/button.vue'
+import upload from '../components/work/upload.vue'
 
 
 
@@ -69,7 +70,10 @@ var routes = [
     name: 'allOrders', path: '/allOrders', component: allOrders
   },
   {
-    name: 'button', path: '/button', component: button
+    name: 'button', path: '/work/button', component: button
+  },
+  {
+    name: 'upload', path: '/work/upload', component: upload
   }
 ]
 var router = new VueRouter({
