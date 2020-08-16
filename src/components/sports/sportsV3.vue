@@ -1,6 +1,6 @@
 <template>
   <!-- 内容 -->
-  <div class="col-md-offset-2 main" style="height: 100%">
+  <div  style="height: 100%">
     <el-row>
       <el-col :span="20">
         <div class="grid-content bg-purple">
@@ -9,15 +9,15 @@
       </el-col>
       <el-col :span="2">
         <div class="grid-content bg-purple">
-          <el-button class="sub-header" type="primary" v-show="show" @click="qh">查看表格</el-button>
-          <el-button class="sub-header" type="primary" v-show="!show" @click="qh">查看图表</el-button>
+          <el-button class="sub-header" type="primary" v-show="show" @click="qieh">查看表格</el-button>
+          <el-button class="sub-header" type="primary" v-show="!show" @click="qhuan">查看图表</el-button>
         </div>
       </el-col>
     </el-row>
     <!-- 查看echarts -->
     <div>
       <el-row>
-        <el-col :span="6" v-show="false">
+        <el-col :span="6" v-show="true">
           <div class="grid-content bg-purple">
             <el-select v-model="userId" placeholder="请选择">
               <el-option
@@ -44,7 +44,7 @@
           </div>
         </el-col>
 
-        <el-col :span="7" v-show="false">
+        <el-col :span="7" v-show="true">
           <div class="grid-content bg-purple">
             <el-select v-model="yearMonth" placeholder="请选择">
               <el-option
@@ -72,10 +72,10 @@
         <option v-for="ym in yearMonths" v-bind:value="ym">{{ym}}</option>
       </select>
       </div>-->
-      <div id="echartsDiv" style="height: 760px;width: 100%"></div>
+      <div v-show="show" id="echartsDiv" style="height: 760px;width: 100%"></div>
     </div>
     <!-- 查看tables -->
-    <div>
+    <div v-show="!show">
       <el-table :data="list" stripe style="width: 100%" border v-loading="loading">
         <el-table-column type="index" label="#"></el-table-column>
         <el-table-column prop="name" label="姓名"></el-table-column>
@@ -154,8 +154,13 @@ export default {
     //     }
     //   });
     // },
-    qh() {
+    qieh() {
       this.show = !this.show;
+
+    },
+    qhuan() {
+      this.show = !this.show;
+
     },
     draw() {
       // console.log("abc上");

@@ -1,8 +1,8 @@
 <template>
   <!-- 内容 -->
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h2 class="sub-header">Sports List</h2>
-    <router-link to="/add" class="btn btn-success">Add</router-link>
+  <div >
+    <h2 >Sports List</h2>
+    <router-link to="/add" >Add</router-link>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -23,7 +23,7 @@
             <td>{{item.happenDate}}</td>
             <td>{{item.reachAmount}}</td>
             <td>
-              <router-link :to="'/edit/'+item.id">修改</router-link>
+              <router-link :to="'/edit/'+item.id">修改111</router-link>
               <a href="#" @click="del(item.id)">删除11111</a>
             </td>
           </tr>

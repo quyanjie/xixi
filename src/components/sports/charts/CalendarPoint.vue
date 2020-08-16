@@ -4,8 +4,8 @@
     <!--&lt;!&ndash;<h2 class="sub-header">Sports Charts CalendarPoint</h2>&ndash;&gt;-->
     <!--<div id="echartsDiv" style="height: 800px;"></div>-->
   <!--</div>-->
-  <div style="margin-left: 300px">
-    <h2 class="sub-header">Sports Charts CalendarPoint</h2>
+  <div >
+    <h2 >Sports Charts CalendarPoint</h2>
     <div id="echartsDiv" style="height: 800px;background-color: bisque"></div>
   </div>
 </template>
@@ -22,7 +22,7 @@
         list: [],
         myChart: null,
         users: [
-          {id: 1, nick: '李明宝贝哈哈哈'},
+          {id: 1, nick: '李明宝贝哈哈哈 `'},
           {id: 2, nick: 'YJ宝贝哈哈哈'},
           {id: 23, nick: '知足是福'},
           {id: 25, nick: '阿冷'},

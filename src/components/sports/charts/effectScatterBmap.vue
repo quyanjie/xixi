@@ -1,6 +1,6 @@
 <template>
   <!-- 内容 -->
-  <div class="col-md-offset-2 main" style="height: 100%">
+  <div style="height: 100%">
     <h2 class="sub-header">Effect Scatter Bmap</h2>
     <div id="container" style="height: 900px"></div>
   </div>

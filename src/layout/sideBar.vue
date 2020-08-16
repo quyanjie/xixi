@@ -1,57 +1,143 @@
 <template>
   <!-- 侧边栏 -->
-  <div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar">
-      <router-link active-class="active" tag="li" to="/list">
-        <a>英雄列表</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/foo">
-        <a>武器列表</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/boo">
-        <a>装备列表</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/sports/sports">
-        <a>运动步数-表格</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/sports/sportsEcharts">
-        <a>运动步数-图表</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/sports/sportsV2">
-        <a>运动步数-柱状图V2</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/sports/sportsV3">
-        <a>运动步数-柱状图V3</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/sports/charts/CalendarPoint">
-        <a>运动步数-日历散点图</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/sports/charts/effectScatterBmap">
-        <a>effectScatterBmap</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/goods/goodsList">
-        <a>商品列表</a>
-      </router-link>
-
-      <router-link active-class="active" tag="li" to="/allOrders">
-        <a>订单列表</a>
-      </router-link>
-    </ul>
-  </div>
+  <el-menu
+    :default-active="path"
+    class="el-menu-vertical-demo"
+    background-color="#545c64"
+    text-color="#fff"
+    active-text-color="red"
+    :router="true"
+  >
+    <el-submenu v-for="item1 in rightList" :key="item1.id" :index="item1.path">
+      <!--  一级菜单 -->
+      <template slot="title">
+        <i class="el-icon-location"></i>
+        <span>{{item1.authName}}</span>
+      </template>
+      <!-- 二级菜单 -->
+      <el-menu-item v-for="item2 in item1.children" :key="item2.id" :index="'/'+item2.path">
+        <i class="el-icon-star-on">{{item2.authName}}</i>
+      </el-menu-item>
+    </el-submenu>
+  </el-menu>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      rightList: [
+        {
+          id: 101,
+          path: "",
+          order: 1,
+          authName: "运动数据",
+          children: [
+            {
+              id: 201,
+              path: "sports/sports",
+              authName: "运动表格"
+            },
+            {
+              id: 202,
+              path: "sports/sportsV2",
+              authName: "运动柱状图"
+            },
+            {
+              id: 203,
+              path: "sports/sportsV3",
+              authName: "运动柱状图v3"
+            },
+            {
+              id: 204,
+              path: "sports/sportsEcharts",
+              authName: "运动echarts"
+            },
+            {
+              id: 205,
+              path: "sports/charts/CalendarPoint",
+              authName: "运动echarts-2"
+            },
+            {
+              id: 206,
+              path: "sports/charts/effectScatterBmap",
+              authName: "运动echarts-3"
+            }
+          ]
+        },
+        {
+          id: 102,
+          path: "",
+          order: 2,
+          authName: "商品",
+          children: [
+            {
+              id: 207,
+              path: "goods/goodsList",
+              authName: "商品列表"
+            }
+          ]
+        },
+        {
+          id: 103,
+          path: "",
+          order: 3,
+          authName: "订单",
+          children: [
+            {
+              id: 208,
+              path: "allOrders",
+              authName: "订单列表"
+            }
+          ]
+        },
+         {
+          id: 104,
+          path: "",
+          order: 4,
+          authName: "工作问题",
+          children: [
+            {
+              id: 209,
+              path: "button",
+              authName: "按钮切换"
+            }
+          ]
+        }
+      ]
+    };
+  },
+  computed: {
+    path: function() {
+      return this.$router.path;
+    }
+  },
+  methods: {
+    async getUserRight() {
+      var res = await this.$http.request({
+        url: `/menus`,
+        method: "get"
+      });
+      var { meta, data } = res.data;
+      if (meta.status === 200) {
+        // console.log("rightList:",this.rightList)
+        this.rightList = data;
+        // console.log("rightList:",this.rightList)
+      } else {
+        this.$message.error(meta.msg);
+      }
+    }
+  },
+  mounted() {
+    // this.getUserRight()
+  }
+};
 </script>
 
 <style>
+/* 侧边栏样式 */
+.el-menu-vertical-demo {
+  height: 100%;
+  background-color: azure;
+}
 </style>

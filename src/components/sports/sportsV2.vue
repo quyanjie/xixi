@@ -1,6 +1,6 @@
 <template>
   <!-- 内容 -->
-  <div class="col-md-offset-2 main" style="height: 100%">
+  <div  style="height: 100%">
     <h2 class="sub-header">Sports Charts V2</h2>
     <div>
       <select v-model="userId" v-change="getAllList()" style="width: 120px">

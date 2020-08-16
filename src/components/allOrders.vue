@@ -1,6 +1,6 @@
 <template>
   <!-- 内容 -->
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div>
     <h2 class="sub-header">订单列表</h2>
     <!-- <router-link to="/add" class="btn btn-success">Add</router-link> -->
     <button @click="getOrdersList(1)">待支付</button>
