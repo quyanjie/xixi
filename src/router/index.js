@@ -18,6 +18,7 @@ import effectScatterBmap from '../components/sports/charts/effectScatterBmap'
 import goodsList from '../components/goods/goodsList.vue'
 import button from '../components/work/button.vue'
 import upload from '../components/work/upload.vue'
+import exportFile from '../components/work/exportFile.vue'
 
 
 
@@ -74,6 +75,9 @@ var routes = [
   },
   {
     name: 'upload', path: '/work/upload', component: upload
+  },
+  {
+    name: 'exportFile', path: '/work/exportFile', component: exportFile
   }
 ]
 var router = new VueRouter({

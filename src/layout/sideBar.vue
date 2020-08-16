@@ -106,6 +106,11 @@ export default {
               id: 210,
               path: "work/upload",
               authName: "上传文件"
+            },
+            {
+              id: 211,
+              path: "work/exportFile",
+              authName: "导出"
             }
           ]
         }
