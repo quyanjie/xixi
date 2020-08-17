@@ -106,6 +106,16 @@ export default {
               id: 210,
               path: "work/upload",
               authName: "上传文件"
+            },
+            {
+              id: 220,
+              path: "work/uploadLiming",
+              authName: "上传图片-李明"
+            },
+            {
+              id: 221,
+              path: "work/uploadLimingV2",
+              authName: "上传图片-李明V2"
             }
           ]
         }

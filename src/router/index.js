@@ -18,7 +18,8 @@ import effectScatterBmap from '../components/sports/charts/effectScatterBmap'
 import goodsList from '../components/goods/goodsList.vue'
 import button from '../components/work/button.vue'
 import upload from '../components/work/upload.vue'
-
+import uploadLiming from '../components/work/uploadLiming'
+import uploadLimingV2 from '../components/work/uploadLimingV2'
 
 
 Vue.use(VueRouter)
@@ -74,6 +75,12 @@ var routes = [
   },
   {
     name: 'upload', path: '/work/upload', component: upload
+  },
+  {
+    name: 'uploadLiming', path: '/work/uploadLiming', component: uploadLiming
+  },
+  {
+    name: 'uploadLimingV2', path: '/work/uploadLimingV2', component: uploadLimingV2
   }
 ]
 var router = new VueRouter({
