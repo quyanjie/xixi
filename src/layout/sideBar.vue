@@ -116,6 +116,11 @@ export default {
               id: 221,
               path: "work/uploadLimingV2",
               authName: "上传图片-李明V2"
+            },
+            {
+              id: 211,
+              path: "work/exportFile",
+              authName: "导出"
             }
           ]
         }

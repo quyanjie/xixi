@@ -20,6 +20,7 @@ import button from '../components/work/button.vue'
 import upload from '../components/work/upload.vue'
 import uploadLiming from '../components/work/uploadLiming'
 import uploadLimingV2 from '../components/work/uploadLimingV2'
+import exportFile from '../components/work/exportFile.vue'
 
 
 Vue.use(VueRouter)
@@ -81,6 +82,9 @@ var routes = [
   },
   {
     name: 'uploadLimingV2', path: '/work/uploadLimingV2', component: uploadLimingV2
+  },
+  {
+    name: 'exportFile', path: '/work/exportFile', component: exportFile
   }
 ]
 var router = new VueRouter({
