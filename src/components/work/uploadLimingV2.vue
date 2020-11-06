@@ -30,6 +30,16 @@
       },
       handlePreview(file) {
         console.log(file);
+      },
+      exportFile() {
+        var url = 'http://pekbj**010:8097/**/export/';
+        //data.docId 是变量吗？如果是变量不能在字符串引号里，要这个加出变量的值
+        url = url + data.docId + '/';
+        //legal 是变量吗？如果是变量不能在字符串引号里，要这个加出变量的值
+        url = url + legal + '/';
+        //DMS 是变量吗？如果是变量不能在字符串引号里，要这个加出变量的值
+        url = url + DMS;
+        window.location.href = url;
       }
     }
   }
